@@ -26,6 +26,23 @@ namespace Stack_Queue
                 tail = newNode;
             }
         }
+        public T Dequeue()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Queue is empty.");
+            }
+
+            T data = head.Data;
+            head = head.Next;
+
+            if (head == null)
+            {
+                tail = null;
+            }
+
+            return data;
+        }
         public void Display()
         {
             Node<T> current = head;
